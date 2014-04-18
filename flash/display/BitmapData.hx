@@ -166,8 +166,9 @@ class BitmapData implements IBitmapDrawable {
 			else
 				ctx.setTransform(matrix.a, matrix.b, matrix.c, matrix.d, matrix.tx, matrix.ty);
 		}
-
-		ctx.drawImage(handle(), 0, 0);
+		ctx.fillStyle = ctx.createPattern(handle(), "no-repeat");
+		ctx.fillRect(0, 0, handle().width, handle().height);
+		//ctx.drawImage(handle(), 0, 0);
 		ctx.restore();
 	}
 	//
